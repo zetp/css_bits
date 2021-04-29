@@ -1,0 +1,97 @@
+<style>
+/* variables definition */
+:root {
+  --col1: #e41a1c;
+  --col2: #377eb8;
+  --col3: #4daf4a;
+  --round: 50%;
+}
+
+/* make flex container that produces column of equal width */
+.eq-columns{
+  display: flex;
+  flex-direction: row;
+}
+.eq-columns > * {
+  width: 100%;
+  margin-left: .25rem;
+  margin-bottom: .25rem;
+  --margin-top: 1%;
+}
+/* it switch from row to column layout on small screens */
+@media (max-width: 600px) {
+    .eq-columns {
+        flex-direction: column;    
+    }
+}
+/* similar wrapper to make two rows / columns newxt to each other*/
+.eq-rows{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1%;
+  margin-bottom: 1%;
+}
+@media (max-width: 600px) {
+    .eq-rows {
+        flex-direction: row;    
+    }
+}
+
+.circle{
+    border-radius: var(--round);
+    width: 100px;
+    height: 100px;
+    display: flex;     /*centre text in div*/
+    justify-content: center;
+    align-items: center;
+}
+
+/* fallback on default value if variable not defined */
+.col1{
+    background: var(--col1, #999);
+}
+.col2{
+    background: var(--col2, #ccc);
+}
+
+/* alteration of variable on hover */
+/* N.B. variables will change only in context of the container not globally */
+.eq-columns:hover{
+  	--col1: var(--col3);
+  	--col2: #dd0;
+}
+
+.col1:hover{
+  	--round: 30%;
+  	transform: scale(0.8);
+}
+.col2:hover{
+  	--round: 10%;
+  	opacity: 0.5;
+}
+
+</style>
+
+<html>
+<div class="eq-rows">
+
+<div class="eq-columns">
+<div class = "circle col1"> 1 </div>
+<div class = "circle col2"> 2 </div>
+<div class = "circle col1"> 1 </div>
+<div class = "circle col2"> 2 </div>
+<div class = "circle col1"> 1 </div>
+<div class = "circle col2"> 2 </div>
+</div>
+
+<div class="eq-columns">
+<div class = "circle col2"> 2 </div>
+<div class = "circle col1"> 1 </div>
+<div class = "circle col2"> 2 </div>
+<div class = "circle col1"> 1 </div>
+<div class = "circle col2"> 2 </div>
+<div class = "circle col1"> 1 </div>
+</div>
+
+</div>
+</html>
