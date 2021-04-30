@@ -1,0 +1,125 @@
+<style>
+:root{
+ --scaleF: 1;
+ --colS: #e66101;
+}
+
+.eq-columns{
+  display: flex;
+  flex-direction: row;
+}
+.eq-columns > * {
+  width: auto;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.cone {
+      width: 0;
+      height: 0;
+      border-left: 21px solid transparent;
+      border-right: 21px solid transparent;
+      border-top: 30px solid blue;
+      border-radius: 50%;
+      animation: spin_cc 2.5s linear infinite;
+      transform-origin: bottom;
+    }
+
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.spinner1{
+    background-color: transparent;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-left-color: green;
+    border-right-color: green;
+    animation: spin_exp 1.5s ease-in-out infinite;
+}
+
+.spinner2{
+    background-color: transparent;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-left-color: violet;
+    border-right-color: violet;
+    animation: spin 1s linear infinite;
+}
+
+.spinner3{
+    background-color: transparent;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-left-color: var(--colS);
+    border-right-color: var(--colS);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg) scale(var(--scaleF));}
+  100% {transform: rotate(360deg) scale(var(--scaleF));}
+}
+@keyframes spin_cc {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-360deg);}
+}
+@keyframes spin_exp {
+  0% {transform: rotate(0deg) scale(1.0);}
+  50% {transform: rotate(-180deg) scale(1.2);}
+  100% {transform: rotate(360deg) scale(1.0);}
+}
+
+.pos1{
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+.pos2{
+ position: absolute;
+ top: 5px;
+ left: 14px;
+}
+.pos3{
+  position: relative;
+  margin-right: 100px;
+  margin-left: 25px;
+}
+.pos3 > * {
+ position: absolute;
+}
+</style>
+
+<html>
+	<div class="eq-columns">
+		<div class="circle spinner1"></div>
+		
+		<div style="position: relative;">
+  			<div class="cone pos2"></div>
+  			<div class="circle spinner2 pos1"></div>
+		</div>
+	</div>
+
+	<div class="eq-columns">
+       <div class="pos3">
+  			<div class="circle spinner3"></div>
+  			<div class="circle spinner3" style = "--scaleF: 0.7; --colS: #fdb863; animation-duration: 1.5s;"></div>
+  			<div class="circle spinner3" style = "--scaleF: 0.5; --colS: #b2abd2; animation-duration: 1s;"></div>
+  			<div class="circle spinner3" style = "--scaleF: 0.35; --colS: #5e3c99; animation-duration: 0.75s;"></div>
+        </div>
+	
+		<div class="pos3">
+  			<div class="circle spinner3" style = "border-left-color: transparent; animation-duration: 1200ms;"></div>
+  			<div class="circle spinner3" style = "border-left-color: transparent; --scaleF: 0.7; animation-duration: 800ms;"></div>
+  			<div class="circle spinner3" style = "border-left-color: transparent; --scaleF: 0.5; animation-duration: 600ms;"></div>
+  			<div class="circle spinner3" style = "border-left-color: transparent; --scaleF: 0.35; animation-duration:400ms;"></div>
+  		</div>
+	</div>
+	
+
+</html>
