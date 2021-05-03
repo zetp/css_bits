@@ -12,7 +12,7 @@
   width: auto;
   margin-right: 25px;
   margin-left: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 100px;
   margin-top: 25px;
 }
 
@@ -41,6 +41,7 @@
     border-left-color: green;
     border-right-color: green;
     animation: spin_exp 1.5s ease-in-out infinite;
+    border: 0px:
 }
 
 .spinner2{
@@ -56,8 +57,8 @@
     background-color: transparent;
     border-radius: 50%;
     border: 10px solid transparent;
-    border-left-color: var(--colS);
-    border-right-color: var(--colS);
+    border-top-color: var(--colS);
+    border-bottom-color: var(--colS);
     animation: spin 2s linear infinite;
 }
 
@@ -96,7 +97,8 @@
 </style>
 
 <html>
-	<div class="eq-columns">
+
+    <div class="eq-columns">
 		<div class="circle spinner1"></div>
 		
 		<div style="position: relative;">
@@ -104,7 +106,7 @@
   			<div class="circle spinner2 pos1"></div>
 		</div>
 	</div>
-
+	
 	<div class="eq-columns">
        <div class="pos3">
   			<div class="circle spinner3"></div>
@@ -114,12 +116,18 @@
         </div>
 	
 		<div class="pos3">
-  			<div class="circle spinner3" style = "border-left-color: transparent; animation-duration: 1200ms;"></div>
-  			<div class="circle spinner3" style = "border-left-color: transparent; --scaleF: 0.7; animation-duration: 800ms;"></div>
-  			<div class="circle spinner3" style = "border-left-color: transparent; --scaleF: 0.5; animation-duration: 600ms;"></div>
-  			<div class="circle spinner3" style = "border-left-color: transparent; --scaleF: 0.35; animation-duration:400ms;"></div>
+  			<div class="circle spinner3" style = "border-top-color: transparent; animation-duration: 1200ms;"></div>
+  			<div class="circle spinner3" style = "border-top-color: transparent; --scaleF: 0.7; animation-duration: 800ms;"></div>
+  			<div class="circle spinner3" style = "border-top-color: transparent; --scaleF: 0.5; animation-duration: 600ms;"></div>
+  			<div class="circle spinner3" style = "border-top-color: transparent; --scaleF: 0.35; animation-duration:400ms;"></div>
   		</div>
-	</div>
-	
+  		
+  		<div class="pos3">
+  			<div class="circle spinner3" style = "border-top-color: transparent; animation-duration: 1200ms; animation-timing-function: ease;"></div>
+  			<div class="circle spinner3" style = "border-top-color: transparent; --scaleF: 0.7; animation-duration: 800ms; animation-timing-function: ease;"></div>
+  			<div class="circle spinner3" style = "border-top-color: transparent; --scaleF: 0.5; animation-duration: 600ms; animation-timing-function: ease;"></div>
+  			<div class="circle spinner3" style = "border-top-color: transparent; --scaleF: 0.35; animation-duration:400ms; animation-timing-function: ease;"></div>
+  		</div>
+	</div>	
 
 </html>
